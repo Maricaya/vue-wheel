@@ -97,6 +97,4 @@ const expect = chai.expect
     let button = vm.$el
     button.click()
     // expect(order).to.eq('2')
-    // button.$el.remove()
-    // button.$destroy()
 }
