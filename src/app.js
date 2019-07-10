@@ -7,7 +7,7 @@ Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
 Vue.component('g-button-group', ButtonGroup)
 
-new Vue ({
+new Vue({
     el: '#app',
     data() {
         return {
