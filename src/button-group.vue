@@ -5,14 +5,15 @@
 </template>
 <script>
 export default {
-    mounted() {
-        console.log(this.$el.children)
-        for(let node of this.$el.children) {
-            if(node.nodeName.toLowerCase() !== 'button') {
-                console.warn(`g-button-group的子元素应该全是g-button，但你写了${node.nodeName.toLowerCase()}`)
-            }
-        }
-    },
+  mounted() {
+    for (let node of this.$el.children) {
+      if (node.nodeName.toLowerCase() !== "button") {
+        console.warn(
+          `g-button-group的子元素应该全是g-button，但你写了${node.nodeName.toLowerCase()}`
+        );
+      }
+    }
+  }
 };
 </script>
 <style lang="scss">
@@ -21,7 +22,9 @@ export default {
   vertical-align: middle;
   > .g-button {
     border-radius: 0;
-    margin-left: -1px;
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
     &:first-child {
       border-top-left-radius: var(--border-radius);
       border-bottom-left-radius: var(--border-radius);
