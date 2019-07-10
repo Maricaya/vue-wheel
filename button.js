@@ -1,5 +1,5 @@
-Vue.component('c-button', {
+Vue.component('g-button', {
     template: `
-        <button class="g-button">按钮</button>
+        <button class="g-button"></button>
     `
 })
