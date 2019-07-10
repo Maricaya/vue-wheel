@@ -41,14 +41,14 @@
 
 <body>
     <div id="app">
-        <g-button>www我爱js</g-button>
-        <g-button icon="settings" icon-position="right">我爱</g-button>
+        <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1">www我爱js</g-button>
+        <g-button icon="settings" :loading=true icon-position="right">我爱</g-button>
         <g-button icon="settings" icon-position="left">我爱js</g-button>
         <g-icon name="download"></g-icon>
     </div>
     <script src="./node_modules/vue/dist/vue.min.js"></script>
     <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_1286250_98grtnfl7a.js"></script>
+    <script src="//at.alicdn.com/t/font_1286250_8pvf91fuiu6.js"></script>
     <script>
         // new Vue({
         //     el: '#app',
