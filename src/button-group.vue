@@ -4,7 +4,16 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+    mounted() {
+        console.log(this.$el.children)
+        for(let node of this.$el.children) {
+            if(node.nodeName.toLowerCase() !== 'button') {
+                console.warn(`g-button-group的子元素应该全是g-button，但你写了${node.nodeName.toLowerCase()}`)
+            }
+        }
+    },
+};
 </script>
 <style lang="scss">
 .g-button-group {
