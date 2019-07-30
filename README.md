@@ -1,5 +1,5 @@
 # vue-wheel - 一个vue ui组件
-
+[![Build Status](https://travis-ci.com/Maricaya/vue-wheel.svg?branch=master)](https://travis-ci.com/Maricaya/vue-wheel)
 ## 介绍
 
 ## 开始使用
