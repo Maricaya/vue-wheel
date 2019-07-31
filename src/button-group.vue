@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
+  name: 'SweetButtonGroup',
   mounted() {
     for (let node of this.$el.children) {
       if (node.nodeName.toLowerCase() !== "button") {
@@ -16,7 +17,7 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scope>
 .g-button-group {
   display: inline-flex;
   vertical-align: middle;

@@ -4,7 +4,9 @@
   </svg>
 </template>
 <script>
+import './svg'
 export default {
+  name: 'SweetIcon',
   props: {
     name: {
       type: String

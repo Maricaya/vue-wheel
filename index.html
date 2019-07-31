@@ -34,13 +34,23 @@
             height: 1em;
             /* margin-right: .4em; */
         }
-    </style>
-    <style>
+        .box {
+            margin: 20px;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
+        <!-- <g-input/> xml是自闭和的，html不是自闭和的 -->
+        <div class="box">
+            <g-input value="zhangsan" readonly></g-input>
+            <g-input value="zhangsan" disabled></g-input>
+            <g-input value="zhangsan"></g-input>
+        </div>
+        <div class="box">
+            <g-input value="zhangsan" error="姓名不能少于两个字"></g-input>
+        </div>
         <!-- <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1">www我爱js</g-button> -->
         <g-button icon="settings" :loading=true icon-position="right">我爱</g-button>
         <g-button icon="settings" icon-position="left">我爱js</g-button>
@@ -50,11 +60,10 @@
             <g-button>更多</g-button>
             <g-button icon="xiangyoujiantou">下一页</g-button>
         </g-button-group>
-        <div id="test"></div>
     </div>
     <script src="./node_modules/vue/dist/vue.min.js"></script>
     <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_1286250_8pvf91fuiu6.js"></script>
+    <!-- <script src="//at.alicdn.com/t/font_1286250_8pvf91fuiu6.js"></script> -->
     <script>
     </script>
 </body>
