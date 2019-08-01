@@ -13,10 +13,19 @@ new Vue({
     el: '#app',
     data() {
         return {
-            loading1: false
+            loading1: false,
+            loading2: true,
+            loading3: false
         }
     },
+    methods: {
+        inputChange(e){
+            console.log(e.target.value)
+        }
+    }
 })
+
+/******************** 下面的可以删除了 ************************/
 import chai from 'chai'
 import spies from 'chai-spies'
 chai.use(spies)
