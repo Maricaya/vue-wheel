@@ -44,9 +44,9 @@
     <div id="app">
         <!-- <g-input/> xml是自闭和的，html不是自闭和的 -->
         <div class="box">
-            <g-input value="zhangsan" readonly></g-input>
-            <g-input value="zhangsan" disabled></g-input>
-            <g-input value="zhangsan"></g-input>
+            <g-input v-model="message"></g-input>
+            <p>{{message}}</p>
+            <button @click="message+=1">+1</button>
         </div>
         <div class="box">
             <g-input value="zhangsan" error="姓名不能少于两个字"></g-input>
