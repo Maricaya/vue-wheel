@@ -1,10 +1,8 @@
 <template>
-  <div
-    class="col"
-    :class="[span && `col-${span}`, offset && `offset-${offset}`]"
-    :style="{marginLeft: gutter/2+'px', marginRight: gutter/2 + 'px'}"
-  >
-    <slot></slot>
+  <div class="col" :class="colClass" :style="colStyle">
+    <div style="border: 1px solid green; height: 100px">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -13,17 +11,38 @@ export default {
   name: "SweetCol",
   props: {
     span: {
-      type: [Number, String],
+      type: [Number, String]
     },
     offset: {
-      type: [Number, String],
-    },
-    gutter: {
-      type: [Number, String],
+      type: [Number, String]
     }
   },
   data() {
     return {
+      gutter: {
+        type: [Number, String],
+        default: 0 
+      }
+      // 写在data中，只会在一开始的时候去读一次colStyle，如果后面gutter变了，写在data里的gutter不会变。
+      //   colStyle: {
+      //     paddingLeft: this.gutter / 2 + "px",
+      //     paddingRight: this.gutter / 2 + "px"
+      //   }
+    }
+  },
+  computed: {
+    colClass(){
+        let {span,offset} = this
+        return [
+            span && `col-${span}`,
+            offset && `offset-${offset}`,
+        ]
+    },
+    colStyle() {
+      return {
+        paddingLeft: this.gutter / 2 + "px",
+        paddingRight: this.gutter / 2 + "px"
+      }
     }
   },
   created() {
@@ -36,8 +55,6 @@ export default {
 </script>
 <style scoped lang="scss">
 .col {
-  background: #ccc;
-  border: 1px solid #999;
   width: 100%;
   // 设置col-1、col-2...一直到col-24，并且给他们设置不同的宽度
   $class-prefix: col-;
