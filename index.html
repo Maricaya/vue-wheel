@@ -44,6 +44,28 @@
     <div id="app">
         <!-- <g-input/> xml是自闭和的，html不是自闭和的 -->
         <div class="box">
+            <g-row>
+                <g-col>11</g-col>
+                <g-col>21</g-col>
+                <g-col>31</g-col>
+                <g-col>41</g-col>
+            </g-row>
+            <g-row>
+                <g-col>11</g-col>
+                <g-col>21</g-col>
+                <g-col>31</g-col>
+                <g-col>41</g-col>
+            </g-row>
+            <g-row>
+                <g-col class="col-1">11</g-col>
+                <g-col span="1">21</g-col>
+                <g-col span="4">31</g-col>
+            </g-row>
+            <g-row>
+                <g-col>11</g-col>
+            </g-row>
+        </div>
+        <div class="box">
             <g-input v-model="message"></g-input>
             <p>{{message}}</p>
             <button @click="message+=1">+1</button>
