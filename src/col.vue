@@ -1,6 +1,9 @@
 <template>
-  <!-- <div class="col" :class="[`col-${span}`]"> -->
-  <div class="col" :class="[span ? `col-${span}` : '']">
+  <div
+    class="col"
+    :class="[span && `col-${span}`, offset && `offset-${offset}`]"
+    :style="{marginLeft: gutter/2+'px', marginRight: gutter/2 + 'px'}"
+  >
     <slot></slot>
   </div>
 </template>
@@ -10,17 +13,32 @@ export default {
   name: "SweetCol",
   props: {
     span: {
-      type: [Number, String]
+      type: [Number, String],
+    },
+    offset: {
+      type: [Number, String],
+    },
+    gutter: {
+      type: [Number, String],
     }
+  },
+  data() {
+    return {
+    }
+  },
+  created() {
+    console.log("col created");
+  },
+  mounted() {
+    console.log("col mounted");
   }
 };
 </script>
 <style scoped lang="scss">
 .col {
-  height: 100px;
-  background-color: grey;
+  background: #ccc;
+  border: 1px solid #999;
   width: 100%;
-  border: 1px solid red;
   // 设置col-1、col-2...一直到col-24，并且给他们设置不同的宽度
   $class-prefix: col-;
   @for $n from 1 through 24 {
@@ -32,5 +50,11 @@ export default {
   // .col.col-2{width:2/24*100%}
   // .....
   // col.col-24{width:24/24*100%}
+  $class-prefix: offset-;
+  @for $n from 1 through 24 {
+    &.#{$class-prefix}#{$n} {
+      margin-left: ($n / 24) * 100%;
+    }
+  }
 }
 </style>
