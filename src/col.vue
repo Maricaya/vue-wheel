@@ -60,11 +60,6 @@ export default {
         ...createClasses(narrowPc, 'narrow-pc-'),
         ...createClasses(pc, 'pc-'),
         ...createClasses(widePc, 'wide-pc-'),
-        // ...(phone ? [`col-phone-${phone.span}`]: []),
-        // ...(ipad ? [`col-ipad-${ipad.span}`]: []),
-        // ...(pc ? [`col-pc-${pc.span}`]: []),
-        // ...(widePc ? [`col-wide-pc-${widePc.span}`]: []),
-        // ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`]: [])
       ];
     },
     colStyle() {
