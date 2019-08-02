@@ -13,52 +13,44 @@
             box-sizing: border-box;
         }
 
-        img {
-            max-width: 100%;
-        }
-
-        /* root 其实就是html */
-        :root {
-            --button-height: 32px;
-            --font-size: 14px;
-            --button-bg: white;
-            --button-active-bg: #eee;
-            --border-radius: 4px;
-            --color: #333;
-            --border-color: #999;
-            --border-color-hover: #666;
-        }
-
-        button {
-            margin-top: 30px;
-        }
-
-        .icon {
-            width: 1em;
-            height: 1em;
-            /* margin-right: .4em; */
-        }
-
         .box {
             margin: 20px;
+        }
+
+        .demo {
+            background: #ddd;
+            border: 1px solid #666;
+            height: 100px;
         }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <!-- <g-input/> xml是自闭和的，html不是自闭和的 -->
+        <div class="box">
+            <g-col span="24">
+                <div class="demo"></div>
+            </g-col>
+            <g-col span="24" :narrow-pc="{span:8}">
+                <div class="demo"></div>
+            </g-col>
+            <g-col span="24" :pc="{span:8}">
+                <div class="demo"></div>
+            </g-col>
+            <g-col span="24" :narrow-pc="{span:8}">
+                <div class="demo"></div>
+            </g-col>
+            <g-col span="24" :narrow-pc="{span:8}">
+                <div class="demo"></div>
+            </g-col>
+        </div>
         <div class="box">
             <g-row gutter="20">
-                <g-col span="4" 
-                    :phone="{span: 24}"
-                    :ipad="{span:8}"
-                    :narrow-pc="{span:4}"
-                    :pc="{span:2}"
-                    :wide-pc="{span:1}"
-                    >11</g-col>
-                <g-col span="4">21</g-col>
-                <g-col span="4">31</g-col>
+                <g-col span="24" :ipad="{span:8}" :narrow-pc="{span:4}" :pc="{span:2}" :wide-pc="{span:1}">
+                    1
+                </g-col>
+                <g-col span="24" :ipad="{span:16}" :narrow-pc="{span:20}" :pc="{span:20}" :wide-pc="{span:20}">11
+                </g-col>
             </g-row>
             <g-row gutter="20">
                 <g-col span="4">11</g-col>
@@ -76,15 +68,17 @@
         <div class="box">
             <g-input value="zhangsan111" @change="inputChange"></g-input>
         </div>
-        <!-- <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1">www我爱js</g-button> -->
-        <g-button icon="settings" :loading=true icon-position="right">我爱</g-button>
-        <g-button icon="settings" icon-position="left">我爱js</g-button>
-        <!-- <g-icon name="download"></g-icon> -->
-        <g-button-group>
-            <g-button icon="xiangzuojiantou">上一页</g-button>
-            <g-button>更多</g-button>
-            <g-button icon="xiangyoujiantou">下一页</g-button>
-        </g-button-group>
+        <div class="box">
+            <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1">www我爱js</g-button>
+            <g-button icon="settings" :loading=true icon-position="right">我爱</g-button>
+            <g-button icon="settings" icon-position="left">我爱js</g-button>
+            <g-icon name="download"></g-icon>
+            <g-button-group>
+                <g-button icon="xiangzuojiantou">上一页</g-button>
+                <g-button>更多</g-button>
+                <g-button icon="xiangyoujiantou">下一页</g-button>
+            </g-button-group>
+        </div>
     </div>
     <script src="./node_modules/vue/dist/vue.min.js"></script>
     <script src="./src/app.js"></script>

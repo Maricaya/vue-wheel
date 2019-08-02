@@ -9,14 +9,14 @@
 </template>
 <script>
 // import Vue from "vue"
-import Icon from './icon'
+import Icon from "./icon";
 // Vue.component('g-icon', Icon)
 
 export default {
   //   props: ["icon", "iconPosition"]
-  name: 'SweetButton',
+  name: "SweetButton",
   components: {
-    'g-icon': Icon
+    "g-icon": Icon
   },
   props: {
     icon: {},
@@ -36,6 +36,16 @@ export default {
 };
 </script>
 <style lang="scss" scope>
+:root {
+  --button-height: 32px;
+  --font-size: 14px;
+  --button-bg: white;
+  --button-active-bg: #eee;
+  --border-radius: 4px;
+  --color: #333;
+  --border-color: #999;
+  --border-color-hover: #666;
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
