@@ -19,10 +19,7 @@ export default {
   },
   data() {
     return {
-      gutter: {
-        type: [Number, String],
-        default: 0 
-      }
+      gutter: 0
       // 写在data中，只会在一开始的时候去读一次colStyle，如果后面gutter变了，写在data里的gutter不会变。
       //   colStyle: {
       //     paddingLeft: this.gutter / 2 + "px",
@@ -33,6 +30,7 @@ export default {
   computed: {
     colClass(){
         let {span,offset} = this
+        // console.log(1 && 100000)
         return [
             span && `col-${span}`,
             offset && `offset-${offset}`,
@@ -40,17 +38,13 @@ export default {
     },
     colStyle() {
       return {
-        paddingLeft: this.gutter / 2 + "px",
-        paddingRight: this.gutter / 2 + "px"
+        marginLeft: this.gutter / 2 + "px",
+        marginRight: this.gutter / 2 + "px"
       }
     }
   },
-  created() {
-    console.log("col created");
-  },
-  mounted() {
-    console.log("col mounted");
-  }
+  created() {},
+  mounted() {}
 };
 </script>
 <style scoped lang="scss">

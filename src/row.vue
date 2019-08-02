@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :style="rowStyle">
+  <div class="row" :align="align" :style="rowStyle" :class="rowClass">
       <slot></slot>
   </div>
 </template>
@@ -18,12 +18,23 @@ export default {
     props: {
         gutter: {
             type: [Number, String]
+        },
+        align: {
+            type: String,
+            validator(value) {
+                // includes() 一个数组是否包含一个指定的值，包含返回 true。
+                return ['left', 'right', 'center'].includes(value)
+            }
         }
     },
     computed: {
         rowStyle () {
             let {gutter} = this
             return { marginLeft: gutter/2 + 'px', marginRight: gutter/2+'px' }
+        },
+        rowClass () {
+            let {align} = this
+            return align && `align-${align}`
         }
     },
     created(){
