@@ -44,7 +44,7 @@ export default {
             vm.gutter = this.gutter
         })
     }
-};
+}
 </script>
 <style lang='scss' scoped>
 .row {

@@ -49,11 +49,18 @@
     <div id="app">
         <!-- <g-input/> xml是自闭和的，html不是自闭和的 -->
         <div class="box">
-            <g-row gutter="10" align="right">
-                <g-col span="4">11</g-col>
-                <g-col span="6">21</g-col>
+            <g-row gutter="20">
+                <g-col span="4" 
+                    :phone="{span: 24}"
+                    :ipad="{span:8}"
+                    :narrow-pc="{span:4}"
+                    :pc="{span:2}"
+                    :wide-pc="{span:1}"
+                    >11</g-col>
+                <g-col span="4">21</g-col>
+                <g-col span="4">31</g-col>
             </g-row>
-            <g-row gutter="100">
+            <g-row gutter="20">
                 <g-col span="4">11</g-col>
                 <g-col span="4">21</g-col>
                 <g-col span="4">31</g-col>
@@ -64,7 +71,7 @@
             <p>{{message}}</p>
         </div>
         <div class="box">
-            <g-input value="zhangsan" error="姓名不能少于两个字"></g-input>
+            <g-input value="张" error="姓名不能少于两个字"></g-input>
         </div>
         <div class="box">
             <g-input value="zhangsan111" @change="inputChange"></g-input>
