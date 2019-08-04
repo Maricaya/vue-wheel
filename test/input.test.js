@@ -74,7 +74,7 @@ describe('Input', () => {
                 )
                 let inputElement = vm.$el.querySelector('input')
                 inputElement.dispatchEvent(event)
-                console.log(inputElement, callback)
+                // console.log(inputElement, callback)
                 // change事件的第一个参数
                 // expect(callback).to.have.been.calledWith(event)
                 expect(callback).to.have.been.calledWith('hi')

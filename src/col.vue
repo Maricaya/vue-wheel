@@ -65,8 +65,8 @@ export default {
     colStyle() {
       // 写在data中，只会在一开始的时候去读一次colStyle，如果后面gutter变了，写在data里的gutter不会变。
       return {
-        marginLeft: this.gutter / 2 + "px",
-        marginRight: this.gutter / 2 + "px"
+        paddingLeft: this.gutter / 2 + "px",
+        paddingRight: this.gutter / 2 + "px"
       };
     }
   },
