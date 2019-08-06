@@ -28,6 +28,17 @@
 <body>
     <div id="app">
         <div class="box">
+            <g-layout style="height: 100vh">
+                <!-- <g-sider class="demo">sider</g-sider> -->
+                <g-layout>
+                    <g-header class="demo">header</g-header>
+                    <g-content class="demo">content</g-content>
+                    <g-footer class="demo">footer</g-footer>
+                </g-layout>
+            </g-layout>
+        </div>
+        <div class="box">
+            <h4>栅格系统</h4>
             <g-col span="24" offset="1" :narrow-pc="{span:12,offset:12}">
                 <div class="demo"></div>
             </g-col>
@@ -47,16 +58,19 @@
             </g-row>
         </div>
         <div class="box">
+            <h4>input</h4>
             <g-input v-model="message"></g-input>
             <p>{{message}}</p>
         </div>
         <div class="box">
+            <h4>input error</h4>
             <g-input value="张" error="姓名不能少于两个字"></g-input>
         </div>
         <div class="box">
             <g-input value="zhangsan111" @change="inputChange"></g-input>
         </div>
         <div class="box">
+            <h4>button 按钮 和 icon</h4>
             <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1">www我爱js</g-button>
             <g-button icon="settings" :loading=true icon-position="right">我爱</g-button>
             <g-button icon="settings" icon-position="left">我爱js</g-button>
@@ -71,8 +85,6 @@
     <script src="./node_modules/vue/dist/vue.min.js"></script>
     <script src="./src/app.js"></script>
     <!-- <script src="//at.alicdn.com/t/font_1286250_8pvf91fuiu6.js"></script> -->
-    <script>
-    </script>
 </body>
 
 </html>
