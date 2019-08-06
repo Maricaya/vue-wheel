@@ -1,18 +1,36 @@
 <template>
-  <div class="sider">
+  <transition name="sider">
+    <div class="sider" v-if="visible">
       <slot></slot>
-  </div>
+      <button @click="visible=false">close</button> 
+    </div>
+  </transition>
 </template>
 
 <script>
+// import
 export default {
-    name: 'SweetSider'
+  name: "SweetSider",
+  data() {
+    return {
+      visible: true
+    };
+  }
 };
 </script>
 <style lang='scss' scoped>
 .sider {
-    // position: relative;
-    // width: 100%;
-    // height: 100%;
+  position: relative;
+  > button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.sider-enter-active, .slider-leave-active {
+    transition: all .3s;
+}
+.sider-enter, .sider-leave-to {
+    margin-left: -200px;
 }
 </style>

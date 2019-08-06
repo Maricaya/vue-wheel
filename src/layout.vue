@@ -16,9 +16,11 @@ export default {
   },
   mounted() {
     this.$children.forEach(vm => {
+        console.log(vm.$options.name)
       if (vm.$options.name === "SweetSider") {
         this.layoutClass.hasSider = true;
       }
+      console.log(this.layoutClass.hasSider)
     });
   }
 };
@@ -28,8 +30,7 @@ export default {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
-  &.hasSilder {
+  &.hasSider {
     flex-direction: row;
   }
 }

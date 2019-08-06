@@ -27,9 +27,25 @@
 
 <body>
     <div id="app">
+        <g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
+            <g-sider style=" background:#ddd; width:200px; color: black;">
+                sider
+            </g-sider>
+            <g-layout>
+                <g-header style="height: 50px; background:lightskyblue;">
+                    header
+                </g-header>
+                <g-content style="height: 100px; background:deepskyblue;">
+                    content
+                </g-content>
+                <g-footer style="height: 50px; background:lightskyblue;">
+                    footer
+                </g-footer>
+            </g-layout>
+        </g-layout>
         <div class="box">
             <g-layout style="height: 100vh">
-                <!-- <g-sider class="demo">sider</g-sider> -->
+                <g-sider>sider</g-sider>
                 <g-layout>
                     <g-header class="demo">header</g-header>
                     <g-content class="demo">content</g-content>
