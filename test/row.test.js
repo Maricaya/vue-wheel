@@ -33,7 +33,6 @@ describe("Row", () => {
     //否则就是在mounted前获取的gutter
     setTimeout(() => {
       const row = vm.$el.querySelector(".row");
-      console.log(getComputedStyle(row))
       expect(getComputedStyle(row).marginLeft).to.eq("-10px");
       expect(getComputedStyle(row).marginRight).to.eq("-10px");
       const cols = vm.$el.querySelectorAll(".col");
@@ -44,18 +43,18 @@ describe("Row", () => {
       vm.$destroy();
     });
     it('接受align属性', () => {
-        const div = document.createElement('div')
-        document.body.appendChild(div)
-        const Constructor = Vue.extend(Row)
-        const vm = new Constructor({
-             //这里只要是对html里的属性进行测试的，就必须将实例挂载到页面上即：$mount(div)
-            propsData: {
-                align: 'right'
-            }
-        }).$mount(div)
-        const element = vm.$el
-        expect(getComputedStyle(element).justifyContent).to.eq('flex-end')
-        vm.$destroy
+      const div = document.createElement('div')
+      document.body.appendChild(div)
+      const Constructor = Vue.extend(Row)
+      const vm = new Constructor({
+        //这里只要是对html里的属性进行测试的，就必须将实例挂载到页面上即：$mount(div)
+        propsData: {
+          align: 'right'
+        }
+      }).$mount(div)
+      const element = vm.$el
+      expect(getComputedStyle(element).justifyContent).to.eq('flex-end')
+      vm.$destroy
     })
   });
 });
