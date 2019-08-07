@@ -27,7 +27,7 @@ describe('Toast', () => {
                 done()
             })
         })
-        it('接受 closeButton', () => {
+        it('接受 closeButton', (done) => {
             // create a basic fake, with no behavior
             const callback = sinon.fake()
             const Constructor = Vue.extend(Toast)
@@ -41,8 +41,11 @@ describe('Toast', () => {
             }).$mount()
             let closeButton = vm.$el.querySelector('.close')
             expect(closeButton.textContent.trim()).to.eq('关闭吧')
-            closeButton.click()
-            expect(callback).to.have.been.called
+            setTimeout(() => {
+                closeButton.click()
+                expect(callback).to.have.been.called
+                done()
+            }, 200)
         })
         it('接受enableHtml', () => {
             const Constructor = Vue.extend(Toast)
