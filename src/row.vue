@@ -23,7 +23,7 @@ export default {
             type: String,
             validator(value) {
                 // includes() 一个数组是否包含一个指定的值，包含返回 true。
-                return ['left', 'right', 'center'].includes(value)
+                return ['left', 'right', 'center'].indexOf(value) >= 0 
             }
         }
     },

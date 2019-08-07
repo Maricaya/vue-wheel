@@ -1,20 +1,40 @@
 import Toast from './toast.vue'
+
+let currentToast
+
 export default {
   install(Vue, options) {
     Vue.prototype.$toast = function (message, toastOptions) {
-      // 1、创建构造器，定义好提示信息的模板
-      let Constructor = Vue.extend(Toast)
-      // 2、创建实例，挂载到文档以后的地方
-      let toast = new Constructor({
+      if (currentToast) {
+        // console.log('这是一个组件', currentToast)
+        currentToast.close()
+      }
+      currentToast = createToast({
+        Vue,
+        message,
         propsData: toastOptions
       })
-      //default 属性包括了所有没有被包含在具名插槽中的节点，或 v-slot:default 的内容。
-      toast.$slots.default = [message]
-      toast.$mount()
-      // 3、把创建的实例添加到body中
-      document.body.appendChild(toast.$el)
     }
   }
+}
+
+function createToast({
+  Vue,
+  message,
+  propsData
+}) {
+  // 1、创建构造器，定义好提示信息的模板
+  let Constructor = Vue.extend(Toast)
+  // 2、创建实例，挂载到文档以后的地方
+  let toast = new Constructor({
+    propsData
+  })
+  //default 属性包括了所有没有被包含在具名插槽中的节点，或 v-slot:default 的内容。
+  toast.$slots.default = [message]
+  toast.$mount()
+  // 3、把创建的实例添加到body中
+  document.body.appendChild(toast.$el)
+  return toast
 }
 // 开发插件
 /**
