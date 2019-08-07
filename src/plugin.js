@@ -1,16 +1,16 @@
 import Toast from './toast.vue'
 export default {
-  install (Vue, options) {
-    Vue.prototype.$toast = function(message) {
+  install(Vue, options) {
+    Vue.prototype.$toast = function (message, toastOptions) {
       // 1、创建构造器，定义好提示信息的模板
-      let Constructor = Vue.extend(Toast) 
-      console.log(Constructor)
+      let Constructor = Vue.extend(Toast)
       // 2、创建实例，挂载到文档以后的地方
-      let toast = new Constructor()
-      console.log(toast)
+      let toast = new Constructor({
+        propsData: toastOptions
+      })
+      //default 属性包括了所有没有被包含在具名插槽中的节点，或 v-slot:default 的内容。
       toast.$slots.default = [message]
       toast.$mount()
-      console.log(toast)
       // 3、把创建的实例添加到body中
       document.body.appendChild(toast.$el)
     }
@@ -45,5 +45,4 @@ export default {
     // 逻辑...
   }
 }
- * 
  */

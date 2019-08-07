@@ -29,7 +29,8 @@
     <div id="app">
         <div class="box">
             <h4>toast</h4>
-            <button @click="showToast">点我</button>
+            <g-button @click="showToast">点我</g-button>
+            <g-button @click="onClickButton">有回应</g-button>
         </div>
         <h4>layout sider header content footer</h4>
         <g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
@@ -48,16 +49,6 @@
                 </g-footer>
             </g-layout>
         </g-layout>
-        <div class="box">
-            <g-layout style="height: 100vh">
-                <g-sider>sider</g-sider>
-                <g-layout>
-                    <g-header class="demo">header</g-header>
-                    <g-content class="demo">content</g-content>
-                    <g-footer class="demo">footer</g-footer>
-                </g-layout>
-            </g-layout>
-        </div>
         <div class="box">
             <h4>栅格系统</h4>
             <g-col span="24" offset="1" :narrow-pc="{span:12,offset:12}">

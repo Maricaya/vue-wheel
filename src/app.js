@@ -37,12 +37,27 @@ new Vue({
             message: '1'
         }
     },
+    created() {
+        this.$toast('文字cahngccccc文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱cc贼唱', {
+            enableHtml: true
+        })
+    },
     methods: {
         inputChange(e) {
             console.log(e.target.value)
         },
         showToast() {
             this.$toast('我是 message')
+        },
+        onClickButton () {
+            this.$toast('你知道我在等你吗？', {
+                closeButton: {
+                    text: '知道了',
+                    callback: () => {
+                        window.alert('他说知道了')
+                    }
+                }
+            })
         }
     }
 })
