@@ -71,7 +71,7 @@ export default {
     },
     close() {
       this.$el.remove();
-      this.$emit('close')
+      this.$emit("close");
       this.$destroy();
     },
     onClickClose() {
@@ -87,6 +87,14 @@ export default {
 $font-size: 14px;
 $toast-height: 1.8;
 $toast-bg: rgba(0, 0, 0, 0.5);
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .toast {
   font-size: $font-size;
   height: $toast-height;
@@ -98,6 +106,7 @@ $toast-bg: rgba(0, 0, 0, 0.5);
   position: fixed;
   // top: 0;
   left: 50%;
+  animation: fade-in 1s;
   transform: translateX(-50%);
   display: flex;
   padding: 0 16px;
@@ -123,7 +132,7 @@ $toast-bg: rgba(0, 0, 0, 0.5);
   }
   &.position-middle {
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
   }
 }
 </style>

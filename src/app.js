@@ -56,7 +56,9 @@ new Vue({
             console.log(e.target.value)
         },
         showToast() {
-            this.$toast('我是 message')
+            this.$toast('我是 message', {
+                position: 'bottom'
+            })
         },
         onClickButton () {
             this.$toast('你知道我在等你吗？', {
