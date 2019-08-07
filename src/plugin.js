@@ -8,11 +8,18 @@ export default {
       if (currentToast) {
         // console.log('这是一个组件', currentToast)
         currentToast.close()
+        // 关闭之后依旧存在，加上null之后不存在
+        // console.log(currentToast)
       }
       currentToast = createToast({
         Vue,
         message,
-        propsData: toastOptions
+        propsData: toastOptions,
+        onClose: () => {
+          // console.log(currentToast)
+          currentToast = null
+          // console.log(currentToast)
+        }
       })
     }
   }
@@ -21,7 +28,8 @@ export default {
 function createToast({
   Vue,
   message,
-  propsData
+  propsData,
+  onClose
 }) {
   // 1、创建构造器，定义好提示信息的模板
   let Constructor = Vue.extend(Toast)
@@ -32,6 +40,7 @@ function createToast({
   //default 属性包括了所有没有被包含在具名插槽中的节点，或 v-slot:default 的内容。
   toast.$slots.default = [message]
   toast.$mount()
+  toast.$on('close', onClose)
   // 3、把创建的实例添加到body中
   document.body.appendChild(toast.$el)
   return toast
