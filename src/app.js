@@ -60,7 +60,22 @@ new Vue({
                 position: 'bottom'
             })
         },
-        onClickButton () {
+        showToast1() {
+            this.$toast('我是 message', {
+                position: 'top'
+            })
+        },
+        showToast2() {
+            this.$toast('我是 message', {
+                position: 'middle'
+            })
+        },
+        showToast3() {
+            this.$toast('我是 message', {
+                position: 'bottom'
+            })
+        },
+        onClickButton() {
             this.$toast('你知道我在等你吗？', {
                 closeButton: {
                     text: '知道了',
