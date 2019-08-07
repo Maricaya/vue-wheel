@@ -27,6 +27,31 @@
 
 <body>
     <div id="app">
+            <h4>tab组件</h4>
+            <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
+                <g-tabs-head>
+                    <template slot="actions">
+                        <button>设置</button>
+                    </template>
+                    <g-tabs-item name="woman">
+                        <g-icon name="settings"></g-icon>美女
+                    </g-tabs-item>
+                    <g-tabs-item name="finance" disabled>
+                        财经
+                    </g-tabs-item>
+                </g-tabs-head>
+                <g-tabs-body>
+                    <g-tabs-pane name="woman">
+                        美女相关资讯
+                    </g-tabs-pane>
+                    <g-tabs-pane name="finance">
+                        财经相关资讯
+                    </g-tabs-pane>
+                    <g-tabs-pane name="sports">
+                        体育相关资讯
+                    </g-tabs-pane>
+                </g-tabs-body>
+            </g-tabs>
         <div class="box">
             <h4>toast</h4>
             <g-button @click="showToast">点我</g-button>
