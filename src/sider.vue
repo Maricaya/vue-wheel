@@ -28,7 +28,7 @@ export default {
   }
 }
 .sider-enter-active, .slider-leave-active {
-    transition: all .3s;
+    transition: all 10s;
 }
 .sider-enter, .sider-leave-to {
     margin-left: -200px;

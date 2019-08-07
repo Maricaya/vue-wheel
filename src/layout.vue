@@ -16,11 +16,9 @@ export default {
   },
   mounted() {
     this.$children.forEach(vm => {
-        console.log(vm.$options.name)
       if (vm.$options.name === "SweetSider") {
         this.layoutClass.hasSider = true;
       }
-      console.log(this.layoutClass.hasSider)
     });
   }
 };
@@ -29,9 +27,9 @@ export default {
 .layout {
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; // 竖直轴，水平放置
   &.hasSider {
-    flex-direction: row;
+    flex-direction: row; // row 从左到右的水平轴
   }
 }
 </style>

@@ -6,11 +6,10 @@
 
 <script>
 export default {
-    name: 'SweetHeader'
+  name: "SweetHeader"
 };
 </script>
 <style lang='scss' scoped>
-.header{
-    
+.header {
 }
 </style>
