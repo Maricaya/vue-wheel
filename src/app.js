@@ -38,8 +38,17 @@ new Vue({
         }
     },
     created() {
-        this.$toast('文字cahngccccc文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱文字cahngccccccc贼唱cc贼唱', {
-            enableHtml: true
+        this.$toast('文字', {
+            position: 'middle',
+            enableHtml: false,
+            closeButton: {
+                text: '记得关闭',
+                callback() {
+                    console.log('已经关闭了')
+                }
+            },
+            autoClose: true,
+            autoCloseDelay: 10
         })
     },
     methods: {
