@@ -47,8 +47,7 @@ new Vue({
                     console.log('已经关闭了')
                 }
             },
-            autoClose: true,
-            autoCloseDelay: 1
+            autoClose: 1
         })
     },
     methods: {
