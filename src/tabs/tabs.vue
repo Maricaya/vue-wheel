@@ -10,7 +10,7 @@ export default {
   name: "SweetTabs",
   props: {
     selected: {
-      type: String,
+      type: String | Number,
       required: true
     },
     direction: {
@@ -38,10 +38,10 @@ export default {
     // vm.$options 读取vm中自定义的属性
     selectTab() {
       this.$children.forEach(vm => {
-        if (vm.$options.name === "GuluTabsHead") {
+        if (vm.$options.name === "SweetTabsHead") {
           vm.$children.forEach(childVm => {
             if (
-              childVm.$options.name === "GuluTabsItem" &&
+              childVm.$options.name === "SweetTabsItem" &&
               childVm.name === this.selected
             ) {
               this.eventBus.$emit("update:selected", this.selected, childVm);
