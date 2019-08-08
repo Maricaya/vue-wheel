@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-item" @click="xxx" :class="classes">
+  <div class="tabs-item" @click="onClick" :class="classes" :data-name="name">
     <slot></slot>
   </div>
 </template>
@@ -39,29 +39,33 @@ export default {
     // => "hi"
 */
   created() {
-    // console.log(this.eventBus);
-    this.eventBus.$on("update:selected", name => {
-      this.active = name === this.name;
-    });
+    if (this.eventBus) {
+      this.eventBus.$on("update:selected", name => {
+        this.active = name === this.name;
+      });
+    }
   },
   methods: {
-    xxx() {
-      this.eventBus.$emit("update:selected", this.name);
+    onClick() {
+      // if(this.)
+      this.eventBus.$emit("update:selected", this.name, this);
+      this.$emit("click", this);
     }
   }
 };
 </script>
 <style lang='scss' scoped>
+$blue: blue;
 .tabs-item {
   flex-shrink: 0;
   padding: 0 1em;
   cursor: pointer;
-  border: 1px solid green;
   height: 100%;
   display: flex;
   align-items: center;
   &.active {
-    background: red;
+    color: $blue;
+    font-weight: bold;
   }
 }
 </style>
