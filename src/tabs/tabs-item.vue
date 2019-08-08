@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "GuluTabsItem",
+  name: "SweetTabsItem",
   inject: ["eventBus"],
   data() {
     return {
@@ -30,7 +30,16 @@ export default {
       };
     }
   },
+  /**
+   * eg.
+    vm.$on('test', function (msg) {
+      console.log(msg)
+    })
+    vm.$emit('test', 'hi')
+    // => "hi"
+*/
   created() {
+    // console.log(this.eventBus);
     this.eventBus.$on("update:selected", name => {
       this.active = name === this.name;
     });
@@ -44,10 +53,10 @@ export default {
 </script>
 <style lang='scss' scoped>
 .tabs-item {
-    flex-shrink: 0;
-    padding: 0 1em;
-    &.active {
-        background: red;
-    }
+  flex-shrink: 0;
+  padding: 0 1em;
+  &.active {
+    background: red;
+  }
 }
 </style>

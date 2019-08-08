@@ -32,8 +32,6 @@ export default {
     };
   },
   mounted() {
-    this.$emit("update:selected", "这是this.emit出来的数据");
-    this.eventBus.$emit("upadte:selected", this.selected);
   }
 };
 </script>

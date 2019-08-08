@@ -4,7 +4,6 @@ import Button from '../src/button'
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
-// expect(xxx).to.eq(xxx)
 describe('Button', () => {
     // BDD 行为驱动测试 Mocha
 
