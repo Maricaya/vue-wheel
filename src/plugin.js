@@ -16,9 +16,7 @@ export default {
         message,
         propsData: toastOptions,
         onClose: () => {
-          // console.log(currentToast)
           currentToast = null
-          // console.log(currentToast)
         }
       })
     }
