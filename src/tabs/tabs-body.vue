@@ -6,7 +6,9 @@
 
 <script>
 export default {
-  name: "SweetTabsBody"
+  name: "SweetTabsBody",
+  inject: ["eventBus"],
+  created() {}
 };
 </script>
 <style lang='scss' scoped>
