@@ -26,7 +26,25 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" style="padding-top: 100px;padding-left: 100px;">
+        <h4>popover组件</h4>
+        <g-popover>
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <g-button>点我</g-button>
+        </g-popover>
+        <g-popover>
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <g-button>点我</g-button>
+        </g-popover>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <h4>tab组件</h4>
         <g-tabs :selected="selected">
             <g-tabs-head>
