@@ -71,4 +71,5 @@ npx parcel index.html --no-cache
 https://zhuanlan.zhihu.com/p/44212421
 https://zhuanlan.zhihu.com/p/39601572
 一套小巧的 Vue 组件<https://github.com/BlameDeng/xue-ui>
-轱辘，面向源码阅读者的 UI 框架<https://github.com/FrankFang/gulu/commit/8f2d4d9048c49621bcbdb6681f72e29deafddb1e>
+轱辘，面向源码阅读者的 UI 框架
+https://github.com/FrankFang/gulu/commit/2c02a4eb0008a277534a25a96e1d9b16b35b175b

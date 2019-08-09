@@ -1,10 +1,13 @@
 <template>
   <!-- @click.stop 事件修饰符 -->
   <div class="popover" @click.stop="xxx">
-    <div class="content-wrapper" v-if="visible" @click.stop>
+    <div ref="contentWrapper" class="content-wrapper" v-if="visible">
       <slot name="content"></slot>
     </div>
     <slot></slot>
+    <span ref="triggerWrapper">
+      <slot></slot>
+    </span>
   </div>
 </template>
 
@@ -18,9 +21,11 @@ export default {
     xxx() {
       // vm 隐藏 popover
       this.visible = !this.visible;
-      console.log(this.visible);
       if (this.visible === true) {
         this.$nextTick(() => {
+          document.body.appendChild(this.$refs.contentWrapper);
+          let {width, height, top, left} = this.$refs.triggerWrapper.getBoundingClientRect()
+          this.$refs.contentWrapper.style.left = left + window.scrollX +'px'
           let eventHandler = () => {
             // document 隐藏 popover
             this.visible = false;
