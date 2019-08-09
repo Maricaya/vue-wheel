@@ -41,7 +41,7 @@ export default {
 */
   created() {
     if (this.eventBus) {
-      this.eventBus.$on("update:selected", name => {
+      this.eventBus.$on("update:sel", name => {
         this.active = name === this.name;
       });
     }
@@ -49,7 +49,8 @@ export default {
   methods: {
     onClick() {
       if (this.disabled) return;
-      this.eventBus.$emit("update:selected", this.name, this);
+      this.eventBus.$emit("update:sel", this.name, this);
+      this.$emit('click', this) // 测试代码
     }
   }
 };

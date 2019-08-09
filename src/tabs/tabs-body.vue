@@ -12,6 +12,5 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
-.tabs-body {
-}
+.tabs-body {}
 </style>

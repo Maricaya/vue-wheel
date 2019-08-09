@@ -6,10 +6,8 @@ export default {
   install(Vue, options) {
     Vue.prototype.$toast = function (message, toastOptions) {
       if (currentToast) {
-        // console.log('这是一个组件', currentToast)
         currentToast.close()
         // 关闭之后依旧存在，加上null之后不存在
-        // console.log(currentToast)
       }
       currentToast = createToast({
         Vue,

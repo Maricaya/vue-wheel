@@ -32,6 +32,9 @@ export default {
     };
   },
   mounted() {
+    if (this.$children.length === 0) {
+      console &&  console.warn &&  console.warn("tabs的组件应该是tab-head和tabs-nav，但你没写子组件");
+    }
     this.selectTab();
   },
   methods: {
@@ -44,7 +47,7 @@ export default {
               childVm.$options.name === "SweetTabsItem" &&
               childVm.name === this.selected
             ) {
-              this.eventBus.$emit("update:selected", this.selected, childVm);
+              this.eventBus.$emit("update:sel", this.selected, childVm);
             }
           });
         }

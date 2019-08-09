@@ -13,7 +13,7 @@ export default {
   name: "SweetTabsHead",
   inject: ["eventBus"],
   mounted() {
-    this.eventBus.$on("update:selected", (item, vm) => {
+    this.eventBus.$on("update:sel", (item, vm) => {
       this.updateLinePosition(vm);
     });
   },

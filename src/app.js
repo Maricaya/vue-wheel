@@ -13,7 +13,7 @@ import Footer from './footer.vue'
 import Toast from './toast.vue'
 import plugin from './plugin'
 import Tabs from './tabs/tabs.vue'
-import TabsHead from './tabs/tab-head.vue'
+import TabsHead from './tabs/tabs-head.vue'
 import TabsBody from './tabs/tabs-body.vue'
 import TabsItem from './tabs/tabs-item.vue'
 import TabsPane from './tabs/tabs-pane.vue';
