@@ -1,6 +1,7 @@
 <template>
-  <div class="popover" @click="xxx">
-    <div class="content-wrapper" v-if="visible">
+  <!-- @click.stop 事件修饰符 -->
+  <div class="popover" @click.stop="xxx">
+    <div class="content-wrapper" v-if="visible" @click.stop>
       <slot name="content"></slot>
     </div>
     <slot></slot>
@@ -15,7 +16,19 @@ export default {
   },
   methods: {
     xxx() {
+      // vm 隐藏 popover
       this.visible = !this.visible;
+      console.log(this.visible);
+      if (this.visible === true) {
+        this.$nextTick(() => {
+          let eventHandler = () => {
+            // document 隐藏 popover
+            this.visible = false;
+            document.removeEventListener("click", eventHandler);
+          };
+          document.addEventListener("click", eventHandler);
+        });
+      }
     }
   }
 };
