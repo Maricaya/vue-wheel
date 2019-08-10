@@ -32,13 +32,18 @@ export default {
     };
   },
   mounted() {
-    if (this.$children.length === 0) {
-      console &&  console.warn &&  console.warn("tabs的组件应该是tab-head和tabs-nav，但你没写子组件");
-    }
     this.selectTab();
+    this.checkChildren();
   },
   methods: {
     // vm.$options 读取vm中自定义的属性
+    checkChildren() {
+      if (this.$children.length === 0) {
+        console &&
+          console.warn &&
+          console.warn("tabs的组件应该是tab-head和tabs-nav，但你没写子组件");
+      }
+    },
     selectTab() {
       this.$children.forEach(vm => {
         if (vm.$options.name === "SweetTabsHead") {
