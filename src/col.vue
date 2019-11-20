@@ -84,10 +84,6 @@ export default {
       width: ($n / 24) * 100%;
     }
   }
-  // .col.col-1{width:1/24*100%};
-  // .col.col-2{width:2/24*100%}
-  // .....
-  // col.col-24{width:24/24*100%}
   $class-prefix: offset-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
